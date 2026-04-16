@@ -6,6 +6,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Kali Linux](https://img.shields.io/badge/Kali-Linux-blue)
 
+
+
 ## 🎯 Purpose
 LogHunter helps blue teams and SOC analysts quickly identify:
 - Top attacking IPs
@@ -13,14 +15,25 @@ LogHunter helps blue teams and SOC analysts quickly identify:
 - User enumeration attempts
 - Directory traversal (Apache)
 
+
+
 ## 📦 Installation (Kali Linux)
 
 ```bash
+# Clone the Repository
 git clone https://github.com/alitalhahere/LogHunter.git
+
+# Move to the Project Directory
 cd LogHunter
+
+# Enable Python Environment
 python3 -m venv venv
 source venv/bin/activate
+
+# Install Requirements
 pip install -r requirements.txt
+```
+
 
 ## 🚀 Usage on Kali
 
@@ -33,15 +46,8 @@ sudo python -m loghunter.cli --type apache --file /var/log/apache2/access.log
 
 # Sample files (for testing)
 python -m loghunter.cli --type apache --file samples/apache_access.log
+```
 
-## 📊 Sample Output
-
-```text
-Top 10 Source IPs by Activity:
-  203.0.113.5 : 3 events
-
-Potential User Enumeration from IPs (3+ different usernames):
-  203.0.113.5
 
 ## 🧪 Generate Real Attack Traffic on Kali
 
@@ -50,19 +56,27 @@ Potential User Enumeration from IPs (3+ different usernames):
 hydra -l admin -P /usr/share/wordlists/rockyou.txt ssh://127.0.0.1 -t 4
 
 # Then run LogHunter on /var/log/auth.log
+```
+
 
 ## 🛣️ Roadmap
-GeoIP lookup for attacker locations
 
-Real-time tail mode (-f flag)
+- GeoIP lookup for attacker locations
 
-JSON output for SIEM integration
+- Real-time tail mode (-f flag)
+
+- JSON output for SIEM integration
+
+
 
 ## 🤝 Contributing
-Pull requests welcome.
 
-## 📜 License
-MIT
+Welcome to the Pull requests.
+
+
 
 ## 👤 Author
-Ali Talha – [![LinkedIn](https://img.shields.io/badge/LinkedIn)](https://www.linkedin.com/in/imalitalha)
+
+Ali Talha 
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-connect-blue)](https://www.linkedin.com/in/imalitalha)
